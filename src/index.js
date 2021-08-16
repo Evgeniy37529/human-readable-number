@@ -6,19 +6,14 @@ module.exports = function toReadable (num) {
     let scales = ['', 'thousand', 'million', 'billion', 'trillion', 'quadrillion', 'quintillion', 'sextillion', 'septillion', 'octillion', 'nonillion', 'decillion', 'undecillion', 'duodecillion', 'tredecillion', 'quatttuor-decillion', 'quindecillion', 'sexdecillion', 'septen-decillion', 'octodecillion', 'novemdecillion', 'vigintillion', 'centillion'];
     let start, end, splitOnThree, partOfNumber, parts , arrWords, word;
     let numSting = String(num).toString();
-    console.log(numSting);
     start = numSting.length;
     splitOnThree  = [];
     arrWords = []
     
     while (start > 0){
-      console.log('start:' , start);
       end = start;
-      console.log('end:' , end);
       start = Math.max(0 , start - 3)
-      console.log('start:' , start);
       splitOnThree.push(numSting.slice(start , end));
-      console.log(splitOnThree);
     }
 
     for(let i = 0; i<splitOnThree.length; i++){
